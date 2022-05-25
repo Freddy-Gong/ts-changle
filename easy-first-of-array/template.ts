@@ -6,7 +6,7 @@
 //第三种解法判断T[0]的类型和T[number]是否相同，T[number]返回元素组成的联合类型
 //空数组会返回never
 type First<T extends any[]> = T extends [infer First, ...infer Rest] ? First : never
-//类似于js的结构吧第一个元素结构出来，判断是不是undefined
+//类似于js的结构吧第一个元素解构出来，判断是不是undefined
 
 
 //T extends [] 判断T是不是一个空数组
