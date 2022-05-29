@@ -14,5 +14,3 @@ type cases = [
     Expect<Equal<Includes<[{ a: 'A' }], { readonly a: 'A' }>, false>>,
     Expect<Equal<Includes<[{ readonly a: 'A' }], { a: 'A' }>, false>>,
 ]
-
-type a = { a: 'A' } extends {} ? true : false
