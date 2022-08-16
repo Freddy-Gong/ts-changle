@@ -5,7 +5,7 @@
 //type First<T extends any[]> = T[0] extends T[number] ? T[0] : never
 //第三种解法判断T[0]的类型和T[number]是否相同，T[number]返回元素组成的联合类型
 //空数组会返回never
-type First<T extends any[]> = T extends [infer First, ...infer Rest] ? First : never
+// type First<T extends any[]> = T extends [infer First, ...infer Rest] ? First : never
 //类似于js的结构吧第一个元素解构出来，判断是不是undefined
 
 
@@ -17,3 +17,9 @@ type First<T extends any[]> = T extends [infer First, ...infer Rest] ? First : n
 //4. infer 的使用 推断
 
 //如果是一个空数组的话T[0] === undefined
+
+type First<T extends any[]> = T extends [] ? never : T[0]
+// type First<T extends any[]> = T["length"] extends 0 ? never : T[0]
+// type First<T extends any[]> = T[0] extends T[number] ? T[0] : never
+// 只有在 extends 中才能声明结构 infer 类型
+// type First<T extends any[]> = T extends [infer First, ...infer Rest] ? First:never

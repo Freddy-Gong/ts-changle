@@ -12,3 +12,4 @@ const People: User = {
     name: "asdqwd"
 }
 People.name = 'xasd'
+
