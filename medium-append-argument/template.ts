@@ -1,0 +1,1 @@
+type AppendArgument<Fn extends Function, A> = Fn extends (...arg: infer Args)=> infer R ? (...arg:[...Args, A])=> R : Fn
